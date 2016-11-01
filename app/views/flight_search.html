@@ -1,0 +1,76 @@
+<div class="header  row ">
+    <div class="column column-1">
+        <img src="images/icon1.png" width="45px" class="vertical-align-middle " />
+    </div>
+    <div class="column column-11 row">
+        <div class="column column-9">
+            <h1>Flight Search Engine</h1></div>
+        <div class="column column-1 header-link">Service </div>
+        <div class="column column-1 header-link">Contact </div>
+        <div class="column column-1 header-link">Login </div>
+    </div>
+</div>
+<div class="main-container row ">
+
+    <div class="search-container column column-4">
+        <form name="flightSearchForm" ng-submit="searchFlights()">
+            <div class="search-panel column-11">
+
+                <div class="search-type-panel row">
+                    <input type="radio" name="searchType" ng-model="searchForm.searchType" value="oneWay" class="column-1" />
+                    <label class="column-3">One Way</label>
+                    <input type="radio" name="searchType" ng-model="searchForm.searchType" value="return" class="column-1" />
+                    <label class="column-7">Return</label>
+                </div>
+
+                <div class="column-12 search-dest-box">
+                    <input ng-model="searchForm.departFrom" required class="column-12 input-field search-place-field" placeholder="Where are you flying from?" />
+                    <input ng-model="searchForm.destination" required class="column-12 input-field search-place-field dotted-seperator" placeholder="Where do you want to go?" />
+                </div>
+
+                <div class="row margin-top-10  ">
+                    <datepicker date-format="dd/MM/yyyy" ng-class="searchForm.searchType == 'oneWay' ? 'column column-12':'column column-6'">
+                        <input ng-model="searchForm.departDate" required type="text" placeholder="Leaving on" class="padding-10 input-field column-12" />
+                    </datepicker>
+                    <datepicker date-format="dd/MM/yyyy" class="column column-6" ng-if="searchForm.searchType == 'return'">
+                        <input ng-model="searchForm.returnDate" required type="text" placeholder="Returning on" class="padding-10 input-field column-12" />
+                    </datepicker>
+                </div>
+
+                <div class="column-12 margin-top-10 ">
+                    <input type="number" ng-model="searchForm.passengerCount" required class="padding-10 column-12 input-field" placeholder="Number of passengers" />
+                </div>
+                <div class="column-12 search-btn-panel">
+                    <input type="submit" class="search-btn" value="Search flight" />
+                </div>
+            </div>
+            <div class="price-slider column-11">
+                <div style="padding-top:15px; padding-bottom:15px"><strong>Refine flight search</strong></div>
+                <div>
+                    <rzslider rz-slider-model="searchForm.priceRange.minValue" rz-slider-high="searchForm.priceRange.maxValue" rz-slider-options="searchForm.priceRange.options"></rzslider>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="result-container column column-8" ng-class="resultData.searchType == '' ? 'bg-image':''">
+
+
+        <div class="row  search-detail-panel" ng-show="resultData.searchType != '' ">
+            <div class="column column-6 ">
+                <h2 ng-show="resultData.searchType=='oneWay' ">    {{resultData.departFrom}} > {{resultData.destination}} </h2>
+                <h2 ng-show="resultData.searchType=='return' ">    {{resultData.departFrom}} > {{resultData.destination}} > {{resultData.departFrom}} </h2>
+            </div>
+            <div class="column column-3">
+                <span>Depart: {{resultData.departDate}} </span>
+            </div>
+            <div class="column column-3" ng-show="resultData.searchType == 'return' ">
+                <span>Return: {{resultData.returnDate}} </span>
+            </div>
+        </div>
+
+        <div ng-repeat="flight in resultData.availableFlights " class="column-12 flight-detail-container ">
+            <flight-details></flight-details>
+        </div>
+
+    </div>
+</div>

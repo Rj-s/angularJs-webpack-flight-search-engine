@@ -1,0 +1,309 @@
+body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+* {
+    font-family: cursive !important;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+}
+
+.row:after {
+    clear: both;
+}
+
+.column {
+    position: relative;
+    float: left;
+    display: block;
+}
+
+.column+.column {
+    margin-left: 1.6%;
+}
+
+.column-1 {
+    width: 6.86666666667%;
+}
+
+.column-2 {
+    width: 15.3333333333%;
+}
+
+.column-3 {
+    width: 23.8%;
+}
+
+.column-4 {
+    width: 32.2666666667%;
+}
+
+.column-5 {
+    width: 40.7333333333%;
+}
+
+.column-6 {
+    width: 49.2%;
+}
+
+.column-7 {
+    width: 57.6666666667%;
+}
+
+.column-8 {
+    width: 66.1333333333%;
+}
+
+.column-9 {
+    width: 74.6%;
+}
+
+.column-10 {
+    width: 83.0666666667%;
+}
+
+.column-11 {
+    width: 91.5333333333%;
+}
+
+.column-12 {
+    width: 100%;
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 770px) {
+    .row {
+        margin-bottom: 0;
+    }
+    .column {
+        margin-bottom: 10px;
+    }
+    .row:last-child .column:last-child {
+        margin-bottom: 0;
+    }
+    .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12 {
+        float: none;
+        width: auto;
+    }
+    .column+.column {
+        margin-left: 0;
+    }
+}
+
+.header {
+    padding: 10px 0px 10px 30px;
+    background-color: #007cc3;
+    align-items: center;
+    border-bottom: solid #0db9f0 3px;
+    color: white;
+}
+
+.header-link {
+    align-self: center;
+}
+
+.header-link:after {
+    border: 1px dotted;
+    content: '';
+    margin-left: 20%;
+}
+
+.main-container {
+    height: calc(100vh - 90px);
+}
+
+.result-container {
+    background-color: #0db9f0;
+    margin: 15px 0px 20px 0px;
+    border-radius: 15px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.padding-left-20 {
+    padding-left: 20px;
+}
+
+.search-type-panel {
+    padding: 0px 10px 10px 0px;
+    color: white;
+}
+
+.search-panel {
+    margin: 15px auto;
+    background: #007CC3;
+    padding: 22px;
+    border-radius: 15px;
+}
+
+.search-dest-box {
+    position: relative;
+}
+
+.search-dest-box:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    bottom: 17px;
+    left: 14px;
+    border-left: 2px solid #ffdd00;
+}
+
+.flight-detail-panel {
+    padding: 10px;
+    padding-left: 35px;
+    margin: 15px auto;
+    background: #ffffff;
+}
+
+.flight-detail-container {
+    position: relative;
+}
+
+.flight-detail-container:not(:last-child):before {
+    content: '';
+    border: solid 2px;
+    border-radius: 25px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 93%;
+    left: 4%;
+    border-color: #e87605;
+    background-color: #0db9f0;
+    ;
+}
+
+.flight-detail-container:not(:last-child):after {
+    content: '';
+    border: solid 2px;
+    border-radius: 46px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 93%;
+    left: 3%;
+    border-color: transparent transparent #e87605 #e87605;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+::-webkit-input-placeholder {
+    color: #0990de;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #0990de;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #0990de;
+}
+
+:-ms-input-placeholder {
+    color: #0990de;
+}
+
+.search-place-field {
+    border: none;
+    padding: 10px 10px 10px 25px;
+}
+
+.dotted-seperator {
+    border-top: 2px #b1b1ff dotted;
+}
+
+.input-field {
+    color: #0990de;
+    height: 40px;
+}
+
+.input-field:focus {
+    outline: none;
+}
+
+.search-btn-panel {
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.search-btn {
+    padding: 10px;
+    background: #2ff10e;
+    float: right;
+    border: none;
+    border-radius: 5px;
+}
+
+.book-btn-panel {
+    overflow: auto;
+    margin-top: 20px;
+}
+
+.book-btn {
+    color: white;
+    padding: 10px;
+    background: #e87605;
+    border: none;
+    border-radius: 5px;
+    width: 125px;
+    text-align: center;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.flight-brand {
+    align-self: center;
+    text-align: center;
+}
+
+.bg-image {
+    background-image: url("images/travel3.jpg");
+    height: -moz-calc(100vh - 110px);
+    height: -webkit-calc(100vh - 110px);
+    height: calc(100vh - 110px);
+    background-size: cover;
+}
+
+.price-slider {
+    border: solid 2px #007cc3;
+    border-radius: 15px;
+    padding: 0px 25px 25px 25px;
+    margin: 20px auto;
+}
+
+.search-detail-panel {
+    border-bottom: solid 2px;
+    border-bottom-color: #2ff10e;
+    padding: 11px;
+    padding-left: 35px;
+    color: white;
+    align-items: center;
+}

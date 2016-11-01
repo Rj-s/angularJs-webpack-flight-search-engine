@@ -1,0 +1,22 @@
+{
+  "name": "flight-search-engine",
+  "author": "Rajesh Saini",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack --watch --watch-poll",
+    "server": "start http://localhost:8080  & webpack-dev-server --progress",
+    "start": "npm run server"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.16.2",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.8",
+    "angularjs-datepicker": "^2.1.6",
+    "angularjs-slider": "^5.8.1"
+  }
+}
