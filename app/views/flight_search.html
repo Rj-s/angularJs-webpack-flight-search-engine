@@ -52,25 +52,25 @@
             </div>
         </form>
     </div>
-    <div class="result-container column column-8" ng-class="resultData.searchType == '' ? 'bg-image':''">
+    <div class=" column column-8" >
 
+        <div class="result-container column-11" ng-class="resultData.searchType == '' ? 'bg-image':''">
+            <div class="row  search-detail-panel" ng-show="resultData.searchType != '' ">
+                <div class="column column-6 ">
+                    <h2 ng-show="resultData.searchType=='oneWay' ">    {{resultData.departFrom}} > {{resultData.destination}} </h2>
+                    <h2 ng-show="resultData.searchType=='return' ">    {{resultData.departFrom}} > {{resultData.destination}} > {{resultData.departFrom}} </h2>
+                </div>
+                <div class="column column-3">
+                    <span>Depart: {{resultData.departDate}} </span>
+                </div>
+                <div class="column column-3" ng-show="resultData.searchType == 'return' ">
+                    <span>Return: {{resultData.returnDate}} </span>
+                </div>
+            </div>
 
-        <div class="row  search-detail-panel" ng-show="resultData.searchType != '' ">
-            <div class="column column-6 ">
-                <h2 ng-show="resultData.searchType=='oneWay' ">    {{resultData.departFrom}} > {{resultData.destination}} </h2>
-                <h2 ng-show="resultData.searchType=='return' ">    {{resultData.departFrom}} > {{resultData.destination}} > {{resultData.departFrom}} </h2>
-            </div>
-            <div class="column column-3">
-                <span>Depart: {{resultData.departDate}} </span>
-            </div>
-            <div class="column column-3" ng-show="resultData.searchType == 'return' ">
-                <span>Return: {{resultData.returnDate}} </span>
+            <div ng-repeat="flight in resultData.availableFlights " class="column-12 flight-detail-container ">
+                <flight-details></flight-details>
             </div>
         </div>
-
-        <div ng-repeat="flight in resultData.availableFlights " class="column-12 flight-detail-container ">
-            <flight-details></flight-details>
-        </div>
-
     </div>
 </div>

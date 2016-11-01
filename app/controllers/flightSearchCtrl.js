@@ -10,16 +10,15 @@ function FlightSearchCtrl($scope, FlightSearchService) {
 
     $scope.searchForm.priceRange = {
         minValue: 2000,
-        maxValue: 10000,
+        maxValue: 20000,
         options: {
             floor: 1500,
             ceil: 25000,
             step: 100,
             minRange: 200,
             pushRange: true,
-            onEnd: function(id) {
-                var availableFlights = FlightSearchService.searchFlights($scope.searchForm);
-                $scope.resultData.availableFlights = FlightSearchService.refineSearchForFare(availableFlights, $scope.searchForm.priceRange);
+            onEnd: function() {
+                $scope.searchFlights();
             }
         }
     };
